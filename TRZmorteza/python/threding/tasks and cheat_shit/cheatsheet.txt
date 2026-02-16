@@ -1,0 +1,26 @@
+def task():
+    for i in range(5):
+        print("Task running", i)
+        time.sleep(1)
+
+t = threading.Thread(target=task)
+
+t.start()   
+t.join()    # one by one start
+
+add more theads
+
+t1 = threading.Thread(target=worker, args=("Thread-1",))
+t2 = threading.Thread(target=worker, args=("Thread-2",))
+
+check cpu for Threads
+import multiprocessing
+max_cpu_core = multiprocessing.cpu_count()
+
+
+auto wait for finished Threads
+max_workers = 5  # maximum threads running at the same time
+semaphore = threading.Semaphore(max_workers)
+with semaphore:
+    def some_def():
+        code ....

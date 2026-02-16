@@ -1,0 +1,9 @@
+1)Make a mini task queue system
+2)Make a system that:
+
+    Has 50 fake tasks
+
+    Uses max 4 workers
+
+    Each task sleeps random 1–5 sec
+
