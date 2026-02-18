@@ -1,2 +1,8 @@
 #trz vscode color extensions
 .vscode
+ocr_server.py
+best.pt
+pipfile
+pipfile.lock
+temp_downloaded_image.jpg
+test_res.txt

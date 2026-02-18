@@ -1,0 +1,8 @@
+This code implements an image processing module that combines YOLO-based table detection and PaddleOCR for extracting Persian text from tables. 
+It loads a custom YOLO model trained to identify table regions (class ID 0) and uses PaddleOCR configured for the Persian language.
+The module preprocesses images by adding white padding, resizing low‑height regions to a target height, applying Gaussian blur and normalization, and slightly compressing the height to improve OCR accuracy.
+Currently, it reads a fixed image file (temp_downloaded_image.jpg), applies the preprocessing steps, runs OCR, and prints each detected text item to the console.
+Although the YOLO table detection function (has_table) is defined, it is not yet used to isolate table regions before OCR;
+the current output is raw OCR from the whole preprocessed image.
+Future development will integrate table detection to extract only table regions, parse them into rows, and expose the functionality via a Flask API that accepts image uploads or URLs, returning structured JSON with the extracted table data.
+The code also includes constants for padding and size thresholds to fine‑tune the preprocessing for optimal text recognition.
