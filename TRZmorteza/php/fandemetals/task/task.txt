@@ -1,0 +1,19 @@
+Create a small website where:
+
+User enters:
+
+Name
+
+Hourly wage
+
+Hours worked per day
+
+System calculates:
+
+Daily pay
+
+Weekly pay (5 working days)
+
+If weekly hours > 40 → give 1.5x overtime
+
+Show result nicely
