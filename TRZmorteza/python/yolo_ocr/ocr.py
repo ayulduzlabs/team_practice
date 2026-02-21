@@ -31,7 +31,49 @@ def get_class_id(box):
         return int(box.cls.item())
     except:
         return -1
+#=====================================
+def is_rectangle(box):
+    x1, y1, x2, y2 = box
+    w = x2 - x1
+    h = y2 - y1
+    if h <= 0:
+        return False
+    return (w / h) >= MIN_ROW_ASPECT_RATIO
+#=====================================
+def extract_rows(img, original_link=None):
+    results = model(img, verbose=False)
+    h, w = img.shape[:2]
+    rows = []
 
+    for idx, box in enumerate(results[0].boxes):
+        if get_class_id(box) != 1:
+            continue
+
+        x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
+
+        if not is_rectangle([x1, y1, x2, y2]):
+            print(f"[DROP] Non-rectangular row {idx}")
+            continue
+
+        x1 = max(0, x1)
+        y1 = max(0, y1)
+        x2 = min(w, x2)
+        y2 = min(h, y2)
+
+        row = {
+            "box": [x1, y1, x2, y2],
+            "original_link": original_link,
+        }
+        
+        rows.append(row)
+
+    return rows
+#=====================================
+def get_class_id(box):
+    try:
+        return int(box.cls.item())
+    except:
+        return -1
 #=====================================
 def preprocess_for_ocr(img):
     
@@ -65,16 +107,16 @@ def has_table(img):
         if get_class_id(box) == 0:
             return True
     return False
-
+#=====================================
 img = cv2.imread('temp_downloaded_image.jpg')
-result = ocr.ocr(preprocess_for_ocr(img))
-text=''
-for blk in result:
-  
-    for item in blk:
-        
-        # text+= item[1][0]
-        print('item:',item[1][0])#true item value is here
-     
-     
-print(text)
+if has_table(img):
+    rows=extract_rows(img)
+    #=========debug===================
+    # result = ocr.ocr(preprocess_for_ocr(img))
+    # text=''
+    # for blk in result:
+    #     for item in blk:
+    #         print('item:',item[1][0])#true item value is here
+    #=========debug===================
+else:
+    print('image has no price table so ignoring')
