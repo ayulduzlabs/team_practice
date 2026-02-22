@@ -1,0 +1,10 @@
+{'box': [24, 627, 350, 645], 'original_link': None, 'text': 'VK- tq qck'}
+{'box': [351, 334, 672, 351], 'original_link': None, 'text': 'edm) 13X 256 R8'}
+{'box': [351, 756, 674, 774], 'original_link': None, 'text': 'EK'}
+{'box': [351, 737, 672, 755], 'original_link': None, 'text': 'ANA'}
+{'box': [352, 535, 673, 553], 'original_link': None, 'text': 'fo M7 256 R8 Blk'}
+{'box': [351, 352, 673, 370], 'original_link': None, 'text': 'edmi A5 128 R4 Blk'}
+{'box': [352, 553, 673, 571], 'original_link': None, 'text': 'V6 256 R8'}
+{'box': [17, 296, 352, 316], 'original_link': None, 'text': '1/8 NVNIZIA SNH-8ZTEZA'}
+{'box': [351, 719, 670, 736], 'original_link': None, 'text': '4/8 4K RZT tOD0'}
+{'box': [19, 535, 352, 554], 'original_link': None, 'text': 'WYNLZA 128-R6 LO'}
