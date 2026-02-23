@@ -149,7 +149,7 @@ def ocr_worker(rows, result_container,img,count,ocr):
 
             # row["text"] = text.strip()
             # row["box"]=[count,f"{count}\\cropped_{count}_{idx}.jpg"]
-            result_container.append("count}\\cropped_{count}_{idx}.jpg??"+text.strip())
+            result_container.append(f"{count}\\cropped_{count}_{idx}.jpg??"+text.strip())
 
             print(Fore.GREEN + f"[THREAD DONE] {text.strip()}")
     except Exception as e:
