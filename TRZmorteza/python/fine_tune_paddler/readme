@@ -1,0 +1,4 @@
+B:\code\ayulduz_project\practice\team_practice\TRZmorteza\python\fine_tune_paddler\paddler_train\PaddleOCR-main
+the path of training runnin
+pipenv run python tools/train.py -c configs/rec/PP-OCRv5/my_PP-OCRv5_test.yml
+the code needed to run the training
